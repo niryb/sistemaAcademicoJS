@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Acadêmico - IFPB</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        #forms_cadastramento {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        #forms_disciplina, #forms_aluno {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], input[type="number"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #ff69b4;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #d43c82;
+        }
+
+        ol {
+            padding: 0;
+            list-style-type: none;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 500px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="forms_cadastramento">
+        <div id="forms_disciplina">
+            Codigo:<input id="codigo_disciplina"><br>
+            Nome:<input id="nome_disciplina"><br>
+
+            <button onclick="controladorDisciplina.inserir()">Cadastrar disciplina</button>
+        </div>
+    </div>
+    <br>
+    <div id="forms_aluno">
+        Codigo da disciplina:<input id="codigo_cd_aluno"><br>
+        Nome do aluno:<input id="nome_aluno"><br>
+        Idade: <input id="idade_aluno"><br>
+        Matricula:<input id="matricula_aluno"><br>
+
+        <button onclick="controladorDisciplina.inserirAluno()">Cadastrar aluno</button>
+    </div>
+
+    <ol id="listaDisciplinas">
+
+    </ol>
+
+    <script src="modelo/aluno.js"></script>
+    <script src="repositorio/aluno_repositorio.js"></script>
+    <script src="servico/aluno_service.js"></script>
+    <script src="controlador/aluno_controlador.js"></script>
+    <script src="modelo/disciplina.js"></script>
+    <script src="repositorio/disciplina_repositorio.js"></script>
+    <script src="servico/disciplina_service.js"></script>
+    <script src="controlador/disciplina_controlador.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
